@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about img {
+      max-width: 200px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .im{
+       width: 200px;        
+       height: 200px;
+       object-fit: cover;    
+       border-radius: 50%;   
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skills li {
+      background: #2575fc;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .project-card .info {
+      padding: 15px;
+    }
+
+    .resume a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #6a11cb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .contact p {
+      margin: 8px 0;
+    }
+
+    footer {
+      background: #333;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about img {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Rajveer singh
+    </h1>
+    <p>Web Developer | Creative Coder | Tech Enthusiast</p>
+  </header>
+
+  <section class="about" id="about">
+    <!-- <h2>About Me</h2> -->
+    <div class="about-content">
+      <img src="174464.jpg" alt="My photo" class="im"/>
+      <div class="about-text">
+        <p>Hello! I'm Rajveer, a passionate front-end developer skilled in HTML, CSS, and JavaScript. I love building interactive, beautiful, and responsive web interfaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+      <li>MongoDB</li>
+    </ul>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <img src="portimage.jpg" alt="Project 1">
+      <div class="info">
+        <h3>Portfolio Website</h3>
+        <p>A personal website to showcase my projects and skills.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="todo.jpg" alt="Project 2">
+      <div class="info">
+        <h3>To-Do App</h3>
+        <p>A simple to-do app with local storage and responsive design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="resume" id="resume">
+    <h2>Resume</h2>
+    <p>Click the button below to download my resume:</p>
+    <a href="rajveer_singh.pdf" download>Download Resume (PDF)</a>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Email: rajveersingh6891@gmail.com</p>
+    <p>Phone: +91 8709326033</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rajveer singh. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

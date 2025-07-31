@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f0f4f8;
+      color: #2d2d2d;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #00F260, #0575E6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    nav a {
+      color: #e0f2fe;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #7dd3fc;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #00f260, #0575e6);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero a {
+      background: white;
+      color: #0575e6;
+      padding: 12px 28px;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .hero a:hover {
+      background: #e2e8f0;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      background-color: #ffffff;
+    }
+
+    .feature {
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #475569;
+    }
+
+    .cta {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta a {
+      background: linear-gradient(to right, #00c9ff, #92fe9d);
+      color: #0f172a;
+      padding: 12px 25px;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .cta a:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="gradient-text">NextGenLaunch</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2 class="gradient-text">Build. Launch. Succeed.</h2>
+    <p>Experience the power of a fast, flexible, and elegant solution built for success.</p>
+    <a href="#">Get Started</a>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3 class="gradient-text">Elegant Design</h3>
+      <p>Crafted with care to give your users the best visual experience possible.</p>
+    </div>
+    <div class="feature">
+      <h3 class="gradient-text">Lightning Fast</h3>
+      <p>Built with performance in mind to ensure smooth and fast interaction.</p>
+    </div>
+    <div class="feature">
+      <h3 class="gradient-text">Fully Responsive</h3>
+      <p>Perfectly adapts to all screen sizes—from phones to desktops.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2 class="gradient-text">Ready to Transform Your Vision?</h2>
+    <a href="#">Start Free</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NextGenLaunch. Crafted with passion.</p>
+  </footer>
+
+</body>
+</html>

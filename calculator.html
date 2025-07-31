@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colorful Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .display {
+      background-color: #f3f3f3;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 2em;
+      text-align: right;
+      margin-bottom: 20px;
+      word-wrap: break-word;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    .btn-operator {
+      background-color: #ff7675;
+      color: white;
+    }
+
+    .btn-number {
+      background-color: #74b9ff;
+      color: white;
+    }
+
+    .btn-clear {
+      background-color: #ffeaa7;
+      color: black;
+    }
+
+    .btn-equals {
+      background-color: #55efc4;
+      color: black;
+      grid-column: span 2;
+    }
+
+    @media (max-width: 500px) {
+      .calculator {
+        padding: 15px;
+      }
+
+      button {
+        padding: 15px;
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="btn-clear" onclick="clearDisplay()">C</button>
+      <button class="btn-operator" onclick="appendOperator('/')">÷</button>
+      <button class="btn-operator" onclick="appendOperator('*')">×</button>
+      <button class="btn-operator" onclick="appendOperator('-')">−</button>
+
+      <button class="btn-number" onclick="appendNumber('7')">7</button>
+      <button class="btn-number" onclick="appendNumber('8')">8</button>
+      <button class="btn-number" onclick="appendNumber('9')">9</button>
+      <button class="btn-operator" onclick="appendOperator('+')">+</button>
+
+      <button class="btn-number" onclick="appendNumber('4')">4</button>
+      <button class="btn-number" onclick="appendNumber('5')">5</button>
+      <button class="btn-number" onclick="appendNumber('6')">6</button>
+      <button class="btn-number" onclick="appendNumber('1')">1</button>
+      <button class="btn-number" onclick="appendNumber('2')">2</button>
+      <button class="btn-number" onclick="appendNumber('3')">3</button>
+
+      <button class="btn-number" onclick="appendNumber('0')">0</button>
+      <button class="btn-number" onclick="appendNumber('.')">.</button>
+      <button class="btn-equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    let currentInput = '';
+
+    function appendNumber(num) {
+      if (currentInput === '0' && num !== '.') {
+        currentInput = '';
+      }
+      currentInput += num;
+      updateDisplay();
+    }
+
+    function appendOperator(op) {
+      if (currentInput === '') return;
+      const lastChar = currentInput[currentInput.length - 1];
+      if ('+-*/'.includes(lastChar)) {
+        currentInput = currentInput.slice(0, -1);
+      }
+      currentInput += op;
+      updateDisplay();
+    }
+
+    function clearDisplay() {
+      currentInput = '';
+      updateDisplay();
+    }
+
+    function calculate() {
+      try {
+        currentInput = eval(currentInput).toString();
+        updateDisplay();
+      } catch {
+        currentInput = 'Error';
+        updateDisplay();
+        setTimeout(clearDisplay, 1500);
+      }
+    }
+
+    function updateDisplay() {
+      display.innerText = currentInput || '0';
+    }
+  </script>
+</body>
+</html>
